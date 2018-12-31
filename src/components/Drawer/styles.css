@@ -1,0 +1,24 @@
+.Drawer {
+  margin: auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  user-select: none;
+}
+
+.drawerItem {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border: 1px solid transparent;
+  margin: .5px;
+}
+.drawerItem:hover {
+  border: 1px blueviolet solid;
+}
+
+.itemsRow {
+  display: flex;
+}
