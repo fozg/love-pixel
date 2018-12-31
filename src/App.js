@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Drawer from './components/Drawer';
+import ColorPicker from './components/ColorPicker';
 
 import './App.css';
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
       <div className="App">
         Test
         <Drawer />
+        <ColorPicker />
       </div>
     );
   }
