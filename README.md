@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+<img src="https://github.com/fozg/love-pixel/blob/master/public/heartpixel.png?raw=true"></img>
+
 ## Available Scripts
 
 In the project directory, you can run:
