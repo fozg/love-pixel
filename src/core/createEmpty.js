@@ -6,7 +6,7 @@ export default function (width, height) {
   for (var i =0; i < height; i++) {
     let row = [];
     for (var j=0; j < width; j++) {
-      row.push('#eee');
+      row.push(null);
     }
     array.push(row);
   }

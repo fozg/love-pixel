@@ -1,40 +1,48 @@
 import React from 'react';
-import createEmpty from '../../core/createEmpty';
-import createRandom from '../../core/createRandom';
 import './styles.css';
 
-const width = 80;
-const height = 40;
-
 export default class Drawer extends React.Component {
+  shouldComponentUpdate = () => false
+
   state = {
-    matrix: createEmpty(width, height),
     key: new Date()
   }
 
   componentDidMount () {
-    global.cursorColr = 'red';
     document.addEventListener('mousedown', this.onMouseDown);
-    document.addEventListener('mouseup', this.onMouseUp);
-    
+    document.addEventListener('mouseup', this.onMouseUp); 
   }
-  
 
   onMouseDown = () => { global.isHover=true;}
   onMouseUp = () => {global.isHover = false;}
 
+  _onCellUpdated = (idx, jdx) => {
+    if (this.props.onGridChanged) {
+      this.props.onGridChanged(this.getNewGrid(idx, jdx));
+    }
+  }
+
+  getNewGrid = (idx, jdx) => {
+    let newGird = this.props.grid;
+    newGird[idx][jdx] = global.cursorColr;
+    return newGird;
+  }
+
   render() {
     const {
-      matrix,
       key
     } = this.state;
+
+    const {
+      grid
+    } = this.props;
 
     return  (
       <div className="Drawer" key={key}>
         {
-          matrix.map((row, idx) => (
+          grid.map((row, idx) => (
             <div className="itemsRow" key={idx}>
-              {renderRow(row)}
+              {renderRow(row, (jdx) => {this._onCellUpdated(idx, jdx)})}
             </div>
           ))
         }
@@ -44,8 +52,8 @@ export default class Drawer extends React.Component {
   }
 }
 
-const renderRow = (row) => (
-  row.map((color, idx) => <Item key={idx} color={color} />)
+const renderRow = (row, onCellUpdated) => (
+  row.map((color, jdx) => <Item key={jdx} color={color} onCellUpdated={() => onCellUpdated(jdx)}/>)
 )
 
 class Item extends React.PureComponent {
@@ -64,12 +72,17 @@ class Item extends React.PureComponent {
 
   onMouseOver = () => {
     if (global.isHover) {
-      this.setState({backgroundColor: global.cursorColr})
+      this.updateCell();
     }
   }
 
   onMouseDown = () => {
-    this.setState({backgroundColor: global.cursorColr})
+    this.updateCell();
+  }
+
+  updateCell = () => {
+    this.setState({backgroundColor: global.cursorColr});
+    this.props.onCellUpdated()
   }
 
   render () {

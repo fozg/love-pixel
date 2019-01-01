@@ -1,5 +1,5 @@
 /**
- * Create a matrix with random colors
+ * Create a grid with random colors
  */
 export default function (width, height) {
   let array = [];
