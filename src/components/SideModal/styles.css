@@ -1,0 +1,12 @@
+.SideModal {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #fff;
+  width: 100%;
+  max-width: 500px;
+  z-index: 1000;
+  box-shadow: -10px 0 40px rgba(0,0,0,.05);
+  padding: 10px;
+}
