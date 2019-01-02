@@ -24,7 +24,7 @@ export default class PixelsGrid extends React.Component {
 
   getNewGrid = (idx, jdx) => {
     let newGird = this.props.grid;
-    newGird[idx][jdx] = global.cursorColr;
+    newGird[idx][jdx] = global.primaryColor;
     return newGird;
   }
 
@@ -82,7 +82,7 @@ class Item extends React.PureComponent {
   }
 
   updateCell = () => {
-    this.setState({backgroundColor: global.cursorColr});
+    this.setState({backgroundColor: global.primaryColor});
     this.props.onCellUpdated()
   }
 

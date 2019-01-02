@@ -26,12 +26,23 @@ input[type='submit'] {
   border: #ffdb76 2px solid;
   background: transparent;
   background-color: #212424;
-
   box-shadow: 3px 3px 0 0 orange;
   outline: none;
   font-weight: 500;
   color: #ffdb76;
 }
+input[type="text"] {
+  border: 1px solid #505050;;
+  padding: 2px 5px;
+  background: rgba(0,0,0,.4);
+  color: #fff;
+  outline: none;
+}
+.full-width {
+  display: block;
+  width: 100%;
+}
+
 .App {
   display: flex;
   flex-direction: row;

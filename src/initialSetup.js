@@ -1,5 +1,5 @@
 export default function () {
 
-  global.cursorColr = 'red';
+  global.primaryColor = 'red';
 
 }

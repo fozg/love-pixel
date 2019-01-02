@@ -6,6 +6,7 @@ import Home from './laydas/Home';
 import initialSetup from './initialSetup';
 
 import './App.css';
+import Logo from './heartpixel2.png'
 
 class App extends Component {
   componentDidMount () {
@@ -18,7 +19,7 @@ class App extends Component {
         basename="/"
         header={{
           headerLeft: <strong style={{padding: '5px 10px'}}>
-          <img src="/heartpixel2.png" width="40" />
+          <img src={Logo} width="40" />
           Pixel Lover</strong>
         }}
         boards={
@@ -51,6 +52,12 @@ class App extends Component {
                 ),
                 sidebarParam: 'todoId',
               },
+            },
+            {
+              path: "/explore",
+              // exact: true,
+              title: "Explore",
+              component: () => <h5 style={{margin: 10, color: '#fff'}}>Comming Soon</h5>,
             },
           ]
         }
