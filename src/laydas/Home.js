@@ -6,10 +6,18 @@ export default class Home extends React.Component {
   
   render () {
     const {
-      location
+      location,
+      history
     } = this.props;
+    let locationSplit = location.pathname.split('/');
+    let draftId = locationSplit.length === 3 ? location.pathname.split('/').slice(-1)[0] : null;
     return (
-      <Drawer creatingNew={location.pathname === '/new' || location.pathname === '/new/'} />
+      <Drawer
+        key={location.pathname}
+        creatingNew={location.pathname === '/new' || location.pathname === '/new/'}
+        draftId={draftId}
+        history={history}
+      />
     )
   }
 }

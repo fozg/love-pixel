@@ -2,10 +2,10 @@ import React from 'react';
 import './styles.css';
 
 export default class PixelsGrid extends React.Component {
-  shouldComponentUpdate = () => false
+  shouldComponentUpdate = (nextState) => {return this.state.key !== nextState.key}
 
   state = {
-    key: new Date()
+    key: Date.now()
   }
 
   componentDidMount () {
@@ -31,6 +31,10 @@ export default class PixelsGrid extends React.Component {
     let newGird = this.props.grid;
     newGird[idx][jdx] = global.primaryColor;
     return newGird;
+  }
+
+  reload = () => {
+    this.setState({key: Date.now()})
   }
 
   render() {

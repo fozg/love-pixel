@@ -36,7 +36,7 @@ class App extends Component {
                   </div>
                 ),
                 sidebarParam: 'todoId',
-                width: 400,
+                width: 0,
                 style: {backgroundColor: '#212424', borderLeft: '1px solid #4d4f4f'}
               },
 
@@ -45,7 +45,7 @@ class App extends Component {
               path: "/mypixels",
               // exact: true,
               title: "My Pixels",
-              component: (props) => <Home {...props}/>,
+              component: (props) => <div {...props}>My Pixels</div>,
               sidebar: {
                 component: ({todoId}) => (
                   <div>
