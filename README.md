@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-<img src="https://github.com/fozg/love-pixel/blob/master/public/heartpixel2.png?raw=true"></img>
+<img src="https://github.com/fozg/love-pixel/blob/master/public/heartpixel2.png"></img>
 
 ## Available Scripts
 
