@@ -1,8 +1,9 @@
 import React from 'react';
+import fillGrid from '../../core/fillGrid';
 import './styles.css';
 
 export default class PixelsGrid extends React.Component {
-  shouldComponentUpdate = (nextState) => {return this.state.key !== nextState.key}
+  shouldComponentUpdate = (nextProps, nextState) => {return this.state.key !== nextState.key}
 
   state = {
     key: Date.now()
@@ -29,7 +30,22 @@ export default class PixelsGrid extends React.Component {
 
   getNewGrid = (idx, jdx) => {
     let newGird = this.props.grid;
-    newGird[idx][jdx] = global.primaryColor;
+    switch (global.pixelConfig.paintTool) {
+      case 'pen':
+        newGird[idx][jdx] = global.pixelConfig.primaryColor;
+        break;
+      case 'eraser':
+        newGird[idx][jdx] = null;
+        break;
+      case 'fill':
+        if (!global.isHover) {
+          newGird = fillGrid(newGird, idx, jdx, global.pixelConfig.primaryColor)
+          setTimeout(() => {
+            this.reload();
+          }, 0);
+        }
+        break;
+    }
     return newGird;
   }
 
@@ -46,6 +62,7 @@ export default class PixelsGrid extends React.Component {
       grid
     } = this.props;
 
+    console.log({key})
     return  (
       <div className="PixelsGrid" key={key}>
         <div style={{height: grid.length * 22}}>
@@ -66,7 +83,10 @@ const renderRow = (row, onCellUpdated) => (
   row.map((color, jdx) => <Item key={jdx} color={color} onCellUpdated={() => onCellUpdated(jdx)}/>)
 )
 
-class Item extends React.PureComponent {
+class Item extends React.Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextState.backgroundColor !== this.state.backgroundColor
+  }
   state = {
     backgroundColor: this.props.color,
   }
@@ -91,7 +111,15 @@ class Item extends React.PureComponent {
   }
 
   updateCell = () => {
-    this.setState({backgroundColor: global.primaryColor});
+    switch (global.pixelConfig.paintTool) {
+      case 'pen':
+        this.setState({backgroundColor: global.pixelConfig.primaryColor});
+        break;
+      case 'eraser':
+        this.setState({backgroundColor: null});
+        break;
+      default: break;
+    }
     this.props.onCellUpdated()
   }
 

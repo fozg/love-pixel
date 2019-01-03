@@ -1,0 +1,4 @@
+input[type='submit'].PaintTool-active {
+  background-color: #ffdb76 ;
+  color: #000;
+}

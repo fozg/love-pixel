@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Panel from '../Panel';
+import {loadConfig, saveConfig} from '../../core/paintToolConfig';
+
 
 import './styles.css';
 
@@ -13,8 +15,13 @@ const COLORS = [
 export default class ColorPicker extends Component {
 
   state = {
-    inputValue: global.primaryColor,
+    inputValue: '',
     seletedColor: null
+  }
+  
+  componentDidMount () {
+    let config = loadConfig();
+    this.setState({inputValue: config.primaryColor, seletedColor: config.primaryColor })
   }
 
   onInputChange = e => {
@@ -23,12 +30,14 @@ export default class ColorPicker extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    global.primaryColor = this.state.inputValue;
+    // TODO: Validate color first
+    global.pixelConfig.primaryColor = this.state.inputValue;
   }
 
   onSeletedColor = (seletedColor) => {
-    global.primaryColor = seletedColor;
+    global.pixelConfig.primaryColor = seletedColor;
     this.setState({seletedColor, inputValue: seletedColor});
+    saveConfig('primaryColor', seletedColor)
   }
 
   render () {

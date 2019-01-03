@@ -1,5 +1,5 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom';
+// import {Redirect} from 'react-router-dom';
 import uniqid from 'uniqid';
 
 import PixelsGrid from '../PixelsGrid';
@@ -14,8 +14,9 @@ import createEmpty from '../../core/createEmpty';
 import exportToCSS from '../../core/exportToCSS';
 import {save, get} from '../../core/storage';
 
-const DEFAULT_WIDTH = 16;
-const DEFAULT_HEIGHT = 16;
+const DEFAULT_WIDTH = 32;
+const DEFAULT_HEIGHT = 32;
+const DELAY_SAVE_TIME = 1000; // 1 second
 
 export default class Home extends React.Component {
   state = {
@@ -39,8 +40,14 @@ export default class Home extends React.Component {
   _onGridChanged = grid => {
     this.setState({grid, isGridChanged: true});
     if (!this.props.creatingNew) {
-      save(this.state.draftId,  grid);
+      
+      this._delaySave(() => {save(this.state.draftId,  grid);}) 
     }
+  }
+
+  _delaySave = (cb) => {
+    clearTimeout(this.timeoutSave)
+    this.timeoutSave = setTimeout(cb, DELAY_SAVE_TIME);
   }
 
   _onMouseUp = () => {
@@ -48,7 +55,7 @@ export default class Home extends React.Component {
       let uid = uniqid();
       this.setState({draftId: uid});
       save(uid, this.state.grid);
-      this.props.history.push(`/new/${uid}`, 'Pixelove')
+      this.props.history.push(`/new/${uid}`, 'Pixelove');
     }
   }
 
