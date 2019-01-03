@@ -7,7 +7,7 @@ import NewPixelSidebar from './components/NewPixelSidebar';
 import initialSetup from './initialSetup';
 
 import './App.css';
-import Logo from './heartpixel2.png'
+import Logo from './newHeart.png'
 
 class App extends Component {
   componentDidMount () {
