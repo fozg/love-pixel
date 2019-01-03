@@ -28,7 +28,7 @@ class App extends Component {
               path: "/new",
               // exact: true,
               title: "Create new",
-              component: () => <Home />,
+              component: (props) => <Home {...props}/>,
               sidebar: {
                 component: ({todoId}) => (
                   <div>
@@ -36,6 +36,8 @@ class App extends Component {
                   </div>
                 ),
                 sidebarParam: 'todoId',
+                width: 400,
+                style: {backgroundColor: '#212424', borderLeft: '1px solid #4d4f4f'}
               },
 
             },
@@ -43,7 +45,7 @@ class App extends Component {
               path: "/mypixels",
               // exact: true,
               title: "My Pixels",
-              component: () => <Home />,
+              component: (props) => <Home {...props}/>,
               sidebar: {
                 component: ({todoId}) => (
                   <div>

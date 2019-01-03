@@ -40,6 +40,7 @@ export default class ColorPicker extends Component {
           {
             COLORS.map((color, idx) => (
               <div
+                key={color}
                 style={{backgroundColor: color, borderColor: seletedColor === color ? '#fff': 'transparent'}} 
                 className="Color-pickerItem"
                 onClick={() => {this.onSeletedColor(color)}}

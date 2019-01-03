@@ -13,8 +13,13 @@ export default class PixelsGrid extends React.Component {
     document.addEventListener('mouseup', this.onMouseUp); 
   }
 
-  onMouseDown = () => { global.isHover=true;}
-  onMouseUp = () => {global.isHover = false;}
+  onMouseDown = () => { global.isHover = true;}
+  onMouseUp = () => { 
+    global.isHover = false;
+    if (this.props.onMouseUp) {
+      this.props.onMouseUp();
+    }
+  }
 
   _onCellUpdated = (idx, jdx) => {
     if (this.props.onGridChanged) {
