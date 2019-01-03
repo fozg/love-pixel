@@ -14,8 +14,8 @@ import exportToCSS from '../../core/exportToCSS';
 import exportToPNG from '../../core/exportToPNG';
 import {save, get} from '../../core/storage';
 
-const DEFAULT_WIDTH = 16;
-const DEFAULT_HEIGHT = 16;
+const DEFAULT_WIDTH = 32;
+const DEFAULT_HEIGHT = 32;
 const DELAY_SAVE_TIME = 1000; // 1 second
 
 export default class Home extends React.Component {
