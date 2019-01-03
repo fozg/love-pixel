@@ -39,8 +39,8 @@ export default class PixelsGrid extends React.Component {
         break;
       case 'fill':
         if (!global.isHover) {
-          newGird = fillGrid(newGird, idx, jdx, global.pixelConfig.primaryColor)
           setTimeout(() => {
+            newGird = fillGrid(newGird, idx, jdx, global.pixelConfig.primaryColor)
             this.reload();
           }, 0);
         }
@@ -62,7 +62,6 @@ export default class PixelsGrid extends React.Component {
       grid
     } = this.props;
 
-    console.log({key})
     return  (
       <div className="PixelsGrid" key={key}>
         <div style={{height: grid.length * 22}}>
@@ -113,7 +112,10 @@ class Item extends React.Component {
   updateCell = () => {
     switch (global.pixelConfig.paintTool) {
       case 'pen':
-        this.setState({backgroundColor: global.pixelConfig.primaryColor});
+        setTimeout(() => {
+          
+          this.setState({backgroundColor: global.pixelConfig.primaryColor});
+        },);
         break;
       case 'eraser':
         this.setState({backgroundColor: null});

@@ -7,18 +7,23 @@
   
   user-select: none;
   flex: 1;
+  cursor: cell;
 }
 
 .PixelsGridItem {
   width: 20px;
   height: 20px;
   display: inline-block;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   margin: .5px;
   background-color: rgba(255,255,255, .1);
+  transition: border .2s;
 }
 .PixelsGridItem:hover {
-  border: 1px #ffdb76 solid;
+  transition: none;
+  border: 2px #ffdb76 solid;
+  /* cursor: crosshair; */
+
 }
 
 .itemsRow {

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-
 import Layda, {LinkToSidebar} from 'react-layda';
+
 import Home from './laydas/Home';
+import NewPixelSidebar from './components/NewPixelSidebar';
 
 import initialSetup from './initialSetup';
 
@@ -30,14 +31,14 @@ class App extends Component {
               title: "Create new",
               component: (props) => <Home {...props}/>,
               sidebar: {
-                component: ({todoId}) => (
+                component: ({pixelId}) => (
                   <div>
-                    <div>Side bar Testing. <br/> Task id: {todoId} </div>
+                    <NewPixelSidebar pixelId={pixelId} />
                   </div>
                 ),
-                sidebarParam: 'todoId',
-                width: 0,
-                style: {backgroundColor: '#212424', borderLeft: '1px solid #4d4f4f'}
+                sidebarParam: 'pixelId',
+                width: 320,
+                style: {backgroundColor: '#212424', borderLeft: '1px solid #4d4f4f', padding: 10}
               },
 
             },

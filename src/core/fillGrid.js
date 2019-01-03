@@ -12,7 +12,7 @@ export default function fillGrid(grid, x, y, color, currentColor) {
   } else {
     _currentColor = currentColor;
   } 
-  
+  if (color === grid[x][y]) return grid;
   grid[x][y] = color;
   if ( y + 1 <= grid[x].length && grid[x][y+1] === _currentColor) {
     grid = fillGrid(grid, x, y + 1, color, _currentColor)
@@ -28,13 +28,3 @@ export default function fillGrid(grid, x, y, color, currentColor) {
   } 
   return grid;
 }
-
-
-// let testArray = [
-//   [1,1,1,2],
-//   [1,2,2,3],
-//   [1,1,2,2],
-//   [1,1,2,2]
-// ]
-
-// fillGrid(testArray, 1, 1, 3)

@@ -1,7 +1,6 @@
 const PIXELKEY = 'PIXEL';
 
 export function save(uniqid, data) {
-  console.log({uniqid, data})
   localStorage.setItem(`${PIXELKEY}-${uniqid}`, JSON.stringify(data));
 }
 

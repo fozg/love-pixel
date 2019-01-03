@@ -23,7 +23,6 @@ export default function (grid, pixelSize = 15) {
   height: ${pixelSize}px;
 }
   `
-  console.log(css);
 
   return css;
 }
