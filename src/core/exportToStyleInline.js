@@ -4,7 +4,6 @@
  */
 
 export default function (grid, pixelSize = 15) {
-  console.log({grid})
   let boxShadow = '';
   grid.forEach((rowArray, x) => {
     rowArray.forEach((cell, y) => {
@@ -20,6 +19,5 @@ export default function (grid, pixelSize = 15) {
     width: pixelSize,
     height: pixelSize,
   }
-  console.log({style})
   return style;
 }

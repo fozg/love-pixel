@@ -30,8 +30,8 @@ class App extends Component {
             {
               path: "/",
               exact: true,
-              title: "Pixel",
-              component: () => <Redirect to="/new" />,
+              title: "My Pixel",
+              component: (props) => <MyPixels {...props} />,
               sidebar: {component: (_ => false),},
             },
             {
@@ -51,20 +51,20 @@ class App extends Component {
               },
 
             },
-            {
-              path: "/mypixels",
-              // exact: true,
-              title: "My Pixels",
-              component: (props) => <MyPixels {...props} />,
-              sidebar: {
-                component: ({todoId}) => (
-                  <div>
-                    <div>Side bar Testing. <br/> Task id: {todoId} </div>
-                  </div>
-                ),
-                sidebarParam: 'todoId',
-              },
-            },
+            // {
+            //   path: "/mypixels",
+            //   // exact: true,
+            //   title: "My Pixels",
+            //   component: (props) => <MyPixels {...props} />,
+            //   sidebar: {
+            //     component: ({todoId}) => (
+            //       <div>
+            //         <div>Side bar Testing. <br/> Task id: {todoId} </div>
+            //       </div>
+            //     ),
+            //     sidebarParam: 'todoId',
+            //   },
+            // },
             {
               path: "/explore",
               // exact: true,

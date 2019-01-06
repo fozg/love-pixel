@@ -19,7 +19,7 @@ code {
     monospace;  
 }
 
-a {
+a, a:hover {
   color: #41c7c7;
   font-weight: 500;
 }
@@ -95,23 +95,33 @@ input[type="text"] {
 /* Custom Layda css */
 .Layda-Header {
   background-color: #212424;
-  border-bottom: 1px solid #4d4f4f;
+  border-bottom: 1px solid #383838;
   color: #fff;
 }
 .Layda-Navigation {
   background-color: #212424;
-  border-right: 1px solid #4d4f4f;
+  border-right: 1px solid #383838;
 }
 
 .Layda-Navigation a {
   color: #41c7c7;
 }
+
 a.Layda-Nav-active {
   background-color: #555 !important;
   color: #ffdb76;
 }
+.Layda-Navigation a:hover{
+  background: transparent ;
+  text-decoration: underline;
+}
 
 /* My pixels */
+.MyPixels {
+  overflow: auto;
+  flex: 1;
+  height: 100%;
+}
 .MyPixels__listItem {
   border: 1px solid transparent;
 }
