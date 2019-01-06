@@ -25,6 +25,15 @@ class App extends Component {
           <img src={Logo} width="40" />
           Pixel Lover</strong>
         }}
+        styleHeader={{
+          backgroundColor: '#212424',
+          borderBottom: '1px solid #383838',
+          color: '#fff'
+        }}
+        styleNavigation={{
+          backgroundColor: '#212424',
+          borderRight: '1px solid #383838'
+        }}
         boards={
           [
             {
