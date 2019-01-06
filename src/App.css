@@ -9,6 +9,7 @@ body {
   background-color: #212424;
   user-select: none;
   font-size: 14px;
+  color: #fff;
 }
 * {
   box-sizing: border-box; 
@@ -103,7 +104,17 @@ input[type="text"] {
 }
 
 .Layda-Navigation a {
-  background-color: transparent !important;
   color: #41c7c7;
-  font-weight: 500;
+}
+a.Layda-Nav-active {
+  background-color: #555 !important;
+  color: #ffdb76;
+}
+
+/* My pixels */
+.MyPixels__listItem {
+  border: 1px solid transparent;
+}
+.MyPixels__listItem:hover {
+  border: 1px solid #ffdb76;
 }

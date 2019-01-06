@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Layda, {LinkToSidebar} from 'react-layda';
+import {Redirect} from 'react-router-dom'
 
 import Home from './laydas/Home';
+import MyPixels from './laydas/MyPixels';
 import NewPixelSidebar from './components/NewPixelSidebar';
 
 import initialSetup from './initialSetup';
@@ -26,6 +28,13 @@ class App extends Component {
         boards={
           [
             {
+              path: "/",
+              exact: true,
+              title: "Pixel",
+              component: () => <Redirect to="/new" />,
+              sidebar: {component: (_ => false),},
+            },
+            {
               path: "/new",
               // exact: true,
               title: "Create new",
@@ -46,7 +55,7 @@ class App extends Component {
               path: "/mypixels",
               // exact: true,
               title: "My Pixels",
-              component: (props) => <div {...props}>My Pixels</div>,
+              component: (props) => <MyPixels {...props} />,
               sidebar: {
                 component: ({todoId}) => (
                   <div>

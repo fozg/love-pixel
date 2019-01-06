@@ -18,7 +18,7 @@ const DEFAULT_WIDTH = 32;
 const DEFAULT_HEIGHT = 32;
 const DELAY_SAVE_TIME = 1000; // 1 second
 
-export default class Home extends React.Component {
+export default class Drawer extends React.Component {
   state = {
     grid: createEmpty(DEFAULT_WIDTH, DEFAULT_HEIGHT),
     css: null,
