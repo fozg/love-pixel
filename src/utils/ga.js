@@ -12,8 +12,9 @@ export const initGA = () => {
 
 export const logPageView = () => {
   // console.log('Logging pageview for ${window.location.pathname}')
-  ReactGA.set({ page: window.location.pathname })
-  ReactGA.pageview(window.location.pathname)
+  let crtpage = window.location.host + window.location.pathname;
+  ReactGA.set({ page: crtpage});
+  ReactGA.pageview(crtpage);
 }
 
 export const logEvent = (category = '', action = '') => {
