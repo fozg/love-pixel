@@ -7932,8 +7932,8 @@ react-error-overlay@^5.1.1:
   integrity sha512-gJcOyak5ri9mzhpFObSAkCqNNBCVZE8LaR/mX37agULgSL0dobgX11NVSIetvNzhHMkr6CIqV0xiutvvcjBtkw==
 
 "react-layda@https://github.com/fozg/react-layda.git":
-  version "0.0.2"
-  resolved "https://github.com/fozg/react-layda.git#4e1df147b2d40597d3827d891d24da27380785ca"
+  version "0.0.6"
+  resolved "https://github.com/fozg/react-layda.git#3f4aa81cdb46ac60a005214ccb98d369a71bc34e"
   dependencies:
     react-router-dom "^4.3.1"
 

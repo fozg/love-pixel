@@ -9,7 +9,8 @@ import NewPixelSidebar from './components/NewPixelSidebar';
 import initialSetup from './initialSetup';
 
 import './App.css';
-import Logo from './newHeart.png'
+import Logo from './newHeart.png';
+import Github from './github.png';
 
 class App extends Component {
   componentDidMount () {
@@ -23,7 +24,10 @@ class App extends Component {
         header={{
           headerLeft: <strong style={{padding: '5px 10px'}}>
           <img src={Logo} width="40" />
-          Pixel Lover</strong>
+          Pixel Lover</strong>,
+          headerRight: <a href="https://github.com/fozg/love-pixel" target="_blank" className="Header__githubLink">
+            <img src={Github} height="16" />            
+          </a>
         }}
         styleHeader={{
           backgroundColor: '#212424',

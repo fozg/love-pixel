@@ -104,12 +104,12 @@ input[type="text"] {
 } */
 
 .Layda-Navigation a {
-  color: #41c7c7;
+  color: #41c7c7 !important;
 }
 
 a.Layda-Nav-active {
   background-color: #555 !important;
-  color: #ffdb76;
+  color: #ffdb76 !important;
 }
 .Layda-Navigation a:hover{
   background: transparent ;
@@ -127,4 +127,13 @@ a.Layda-Nav-active {
 }
 .MyPixels__listItem:hover {
   border: 1px solid #ffdb76;
+}
+
+.Header__githubLink {
+  opacity: .7;
+  padding-right: 10px;
+}
+.Header__githubLink:hover {
+  opacity: 1;
+  padding-right: 10px;
 }
