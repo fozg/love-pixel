@@ -1,9 +1,11 @@
 import React from 'react';
-
 import Drawer from '../components/Drawer';
+import {logPageView} from '../utils/ga';
 
 export default class Home extends React.Component {
-  
+  componentDidMount () {
+    logPageView()
+  }
   render () {
     const {
       location,

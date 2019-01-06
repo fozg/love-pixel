@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Layda, {LinkToSidebar} from 'react-layda';
-import {Redirect} from 'react-router-dom'
+import Layda from 'react-layda';
 
 import Home from './laydas/Home';
 import MyPixels from './laydas/MyPixels';
+import Exprole from './laydas/Exprole';
 import NewPixelSidebar from './components/NewPixelSidebar';
 
 import initialSetup from './initialSetup';
@@ -11,6 +11,7 @@ import initialSetup from './initialSetup';
 import './App.css';
 import Logo from './newHeart.png';
 import Github from './github.png';
+
 
 class App extends Component {
   componentDidMount () {
@@ -80,9 +81,8 @@ class App extends Component {
             // },
             {
               path: "/explore",
-              // exact: true,
               title: "Explore",
-              component: () => <h5 style={{margin: 10, color: '#fff'}}>Comming Soon</h5>,
+              component: () => <Exprole />,
             },
           ]
         }

@@ -2,12 +2,16 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import Preview from '../components/Preview';
 import {getAll} from '../core/storage';
+import {logPageView} from '../utils/ga';
+
 
 export default class MyPixels extends React.Component {
   state = {
     grids: []
   }
   componentDidMount () {
+    logPageView();    
+
     setTimeout(() => {
       let grids = getAll();
       
