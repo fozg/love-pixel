@@ -53,16 +53,16 @@ class App extends Component {
               // exact: true,
               title: "Create new",
               component: (props) => <Home {...props}/>,
-              sidebar: {
-                component: ({pixelId}) => (
-                  <div>
-                    <NewPixelSidebar pixelId={pixelId} />
-                  </div>
-                ),
-                sidebarParam: 'pixelId',
-                width: 320,
-                style: {backgroundColor: '#212424', borderLeft: '1px solid #4d4f4f', padding: 10}
-              },
+              // sidebar: {
+              //   component: ({pixelId}) => (
+              //     <div>
+              //       <NewPixelSidebar pixelId={pixelId} />
+              //     </div>
+              //   ),
+              //   sidebarParam: 'pixelId',
+              //   width: 320,
+              //   style: {backgroundColor: '#212424', borderLeft: '1px solid #4d4f4f', padding: 10}
+              // },
 
             },
             // {

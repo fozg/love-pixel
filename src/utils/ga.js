@@ -6,7 +6,7 @@ import ReactGA from 'react-ga'
 const GA_KEY = 'UA-131750478-1';
 
 export const initGA = () => {
-  // console.log('GA init')
+  // console.log('GA init') 
   ReactGA.initialize(GA_KEY)
 }
 
