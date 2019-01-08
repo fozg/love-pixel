@@ -7937,8 +7937,8 @@ react-ga@^2.5.6:
   integrity sha512-g04dz6zrbdHRxVaURPWT3RUbjLflh74sS6dCuhGeZupj7ii+UEt9lwTjALb2ST2w+7wAmzG1YqYlNX4yvRXe1g==
 
 "react-layda@https://github.com/fozg/react-layda.git":
-  version "0.0.8"
-  resolved "https://github.com/fozg/react-layda.git#ed45c85436c1d1ce987b1a46017b76279979677a"
+  version "0.0.9"
+  resolved "https://github.com/fozg/react-layda.git#576210c0cf887e18a2d11ae3f2b0e5e9251efb04"
   dependencies:
     react-router-dom "^4.3.1"
 

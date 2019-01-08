@@ -137,3 +137,20 @@ a.Layda-Nav-active {
   opacity: 1;
   padding-right: 10px;
 }
+
+.visible600 {
+  display: none;
+}
+.visibleUnder600 {
+  display: inherit;
+}
+@media screen and (min-width: 600px) {
+  .visible600 {
+    display: block;
+  }
+  .visibleUnder600 {
+    display: none;
+  }
+}
+
+
